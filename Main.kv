@@ -1,0 +1,64 @@
+BoxLayout:
+
+<BoxLayout>:
+    Label:
+        text: "Rock Paper Scissor"
+        size_hint: .2, .08
+        pos_hint: {"top": 1}
+        background_color: (.2, .2, .9, 1)
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: self.width, 50
+                pos: 0, 600
+
+        ImageLayout
+        Text
+
+
+<ImageLayout>:
+    Image:
+        source: "image.jpg"
+        pos: "80dp", "400dp"
+        width: "150dp"
+        height: "150dp"
+
+<Text>:
+    TextInput:
+        id: name_input
+        size: "280dp", "30dp"
+        pos: "10dp", "330dp"
+    Label:
+        text: "Enter Rock, Paper or Scissor."
+        pos: dp(80), dp(330)
+    Label:
+        id: name_label
+        pos: dp(100), dp(50)
+    Button:
+        on_press: root.on_click()
+        text: "Play"
+        size: "100dp", "40dp"
+        pos: "170dp", "280dp"
+        background_color: (.5, 1, .8, 1)
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    Button:
+        on_press: root.on_clicked_reset()
+        text: "Reset"
+        size: "100dp", "40dp"
+        pos: "40dp", "280dp"
+        background_color: (.5, .1, .5, 1)
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+
+
